@@ -17,27 +17,37 @@ export component AppWindow inherits Window {
         }
 
         HorizontalBox {
+            spacing: 50px;
+            
             VerticalBox {
+                spacing: 50px;
+
                 Button {
-                    text: "Increase";
+                    text: "Link 1";
                 }
 
-                Text {
-                    text: counter;
-                    font-size: 24px;
-                    color: #ffffff;
+                Button {
+                    text: "Link 2";
+                }
+
+                Button {
+                    text: "Link 3";
                 }
             }
 
             VerticalBox {
+                spacing: 50px;
+
                 Button {
-                    text: "Decrease";
+                    text: "Link 4";
                 }
 
-                Text {
-                    text: counter;
-                    font-size: 24px;
-                    color: #ffffff;
+                Button {
+                    text: "Link 5";
+                }
+
+                Button {
+                    text: "Link 6";
                 }
             }
         }
