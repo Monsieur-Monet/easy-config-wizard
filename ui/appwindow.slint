@@ -1,8 +1,8 @@
 import { Button, VerticalBox , HorizontalBox} from "std-widgets.slint";
 
 export component AppWindow inherits Window {
-    in-out property <int> counter: 42;
-    callback request-increase-value();
+    title: "Easy Config Wizard";
+    callback link(string);
     preferred-width: 1000px;
     height: 750px;
     background: #4d4d4d;
@@ -18,12 +18,13 @@ export component AppWindow inherits Window {
 
         HorizontalBox {
             spacing: 50px;
-            
             VerticalBox {
                 spacing: 50px;
-
                 Button {
                     text: "Link 1";
+                    clicked => {
+                    link("link1");
+                    }
                 }
 
                 Button {
@@ -37,7 +38,6 @@ export component AppWindow inherits Window {
 
             VerticalBox {
                 spacing: 50px;
-
                 Button {
                     text: "Link 4";
                 }

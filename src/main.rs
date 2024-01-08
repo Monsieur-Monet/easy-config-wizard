@@ -1,13 +1,17 @@
+use webbrowser;
+
 slint::include_modules!();
+
+fn open_specific_url(url: &str) {
+    if webbrowser::open(url).is_err() {
+        println!("Failed to open url: {}", url);
+    }
+}
 
 fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
 
-    let ui_handle = ui.as_weak();
-    ui.on_request_increase_value(move || {
-        let ui = ui_handle.unwrap();
-        ui.set_counter(ui.get_counter() + 1);
-    });
+    open_specific_url("https://www.rust-lang.org/learn/get-started");
 
     ui.run()
 }
