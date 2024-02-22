@@ -1,55 +1,19 @@
-import { Button, VerticalBox , HorizontalBox} from "std-widgets.slint";
+import { SideBar } from "sidebar.slint";
+import { WelcomePage } from "pages/welcome.slint";
+
 
 export component AppWindow inherits Window {
     title: "Easy Config Wizard";
-    callback link(string);
-    preferred-width: 1000px;
-    height: 750px;
+    preferred-width: 700px;
+    preferred-height: 500px;
     background: #4d4d4d;
-    VerticalBox {
-        HorizontalBox {
-            Text {
-                text: "Hello this is a small text at the top of my application";
-                font-size: 24px;
-                color: #ffffff;
-                horizontal-alignment: center;
-            }
-        }
 
-        HorizontalBox {
-            spacing: 50px;
-            VerticalBox {
-                spacing: 50px;
-                Button {
-                    text: "Link 1";
-                    clicked => {
-                    link("link1");
-                    }
-                }
+    HorizontalLayout{
+        spacing: 20px;
+        side-bar := SideBar {
+       }
 
-                Button {
-                    text: "Link 2";
-                }
-
-                Button {
-                    text: "Link 3";
-                }
-            }
-
-            VerticalBox {
-                spacing: 50px;
-                Button {
-                    text: "Link 4";
-                }
-
-                Button {
-                    text: "Link 5";
-                }
-
-                Button {
-                    text: "Link 6";
-                }
-            }
+        welcome := WelcomePage {
         }
     }
 }

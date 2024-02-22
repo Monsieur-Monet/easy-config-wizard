@@ -1,0 +1,15 @@
+import { Button, VerticalBox , HorizontalBox} from "std-widgets.slint";
+
+export component WelcomePage inherits Rectangle {
+    preferred-width: 500px;
+    VerticalBox {
+        HorizontalBox {
+            Text {
+                text: "Hello this is a small text at the top of my application";
+                font-size: 24px;
+                color: #ffffff;
+                horizontal-alignment: center;
+            }
+        }
+    }
+}

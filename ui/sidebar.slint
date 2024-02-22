@@ -1,0 +1,42 @@
+import { Button, VerticalBox , HorizontalBox} from "std-widgets.slint";
+
+export component SideBar inherits Rectangle {
+    width: 200px;
+    height: 500px;
+
+    callback button-pressed <=> button.clicked;
+    callback button2-pressed <=> button2.clicked;
+    callback button3-pressed <=> button3.clicked;
+    VerticalBox {
+            spacing: 10px;
+                button := Button {
+                    height: 50px;
+                    text: "This opens the Rust docs";
+                }
+
+                button2 := Button {
+                    height: 50px;
+                    text: "This opens Google";
+                }
+
+                button3 := Button {
+                    height: 50px;
+                    text: "This opens a new view";
+                }
+
+                Button {
+                    height: 50px;
+                    text: "Link 4";
+                }
+
+                Button {
+                    height: 50px;
+                    text: "Link 5";
+                }
+
+                Button {
+                    height: 50px;
+                    text: "Link 6";
+                }
+        }
+    }
