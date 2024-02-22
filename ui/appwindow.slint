@@ -1,4 +1,4 @@
-import { Button, VerticalBox , HorizontalBox} from "std-widgets.slint";
+import { Button, VerticalBox , HorizontalBox , TextEdit } from "std-widgets.slint";
 
 
 
@@ -7,10 +7,12 @@ export component AppWindow inherits Window {
     preferred-width: 700px;
     preferred-height: 500px;
     background: #4d4d4d;
-    callback button-pressed<=>button.clicked;
+    in-out property <int> currentView: 1;
+    callback button1-pressed<=>button1.clicked;
     callback button2-pressed<=>button2.clicked;
     callback button3-pressed<=>button3.clicked;
-
+    callback button4-pressed<=>button4.clicked;
+    callback button5-pressed<=>button4.clicked;
     HorizontalLayout {
         Rectangle {
             width: 200px;
@@ -21,43 +23,82 @@ export component AppWindow inherits Window {
                     font-size: 20px;
                     color: #ffffff;
                 }
-                button := Button {
+
+                button1 := Button {
+                    property <string> name: "Rust Docs";
                     height: 50px;
-                    text: "This opens the Rust docs";
+                    text: "View 1";
                 }
 
                 button2 := Button {
                     height: 50px;
-                    text: "This opens Google";
+                    text: "View 2";
                 }
 
                 button3 := Button {
                     height: 50px;
-                    text: "This opens a new view";
+                    text: "View 3";
                 }
 
-                Button {
+                button4 := Button {
                     height: 50px;
-                    text: "Link 4";
+                    text: "View 4";
                 }
 
-                Button {
+                button5 := Button {
                     height: 50px;
-                    text: "Link 5";
-                }
-
-                Button {
-                    height: 50px;
-                    text: "Link 6";
-                }
-                Button {
-                    height: 50px;
-                    text: "Link 6";
+                    text: "Documentation";
                 }
             }
         }
-        Rectangle{
-            
+
+        Rectangle {
+            if (currentView == 1): 
+            VerticalBox {
+                Text {
+                    text: "View 1";
+                    color: #ffffff;
+                }
+
+                Button {
+                    text: "Random Button";
+                    height: 50px;
+                }
+            }
+
+            if (currentView == 2): 
+            VerticalBox {
+                Text {
+                    text: "View 2";
+                    color: #ffffff;
+                }
+
+                Button {
+                    text: "Random Button";
+                    height: 50px;
+                }
+
+                Rectangle{
+                    background: #ffffff;
+                TextEdit {
+                    font-size: 14px;
+                    text: "Lorem ipsum dolor sit amet,\n consectetur adipisici elit";
+                }
+                }
+            }
+
+            if (currentView == 3): 
+            VerticalBox {
+                Text {
+                    text: "View 3";
+                    color: #ffffff;
+                }
+
+                Button {
+                    text: "Random Button";
+                    height: 50px;
+                }
+            }
         }
     }
 }
