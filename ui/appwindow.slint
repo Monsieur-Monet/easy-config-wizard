@@ -1,6 +1,10 @@
-import { Button, VerticalBox , HorizontalBox , TextEdit } from "std-widgets.slint";
+import { Button, VerticalBox , HorizontalBox , TextEdit, GridBox } from "std-widgets.slint";
 
 
+
+export component ReadValue {
+    
+}
 
 export component AppWindow inherits Window {
     title: "Easy Config Wizard";
@@ -12,7 +16,11 @@ export component AppWindow inherits Window {
     callback button2-pressed<=>button2.clicked;
     callback button3-pressed<=>button3.clicked;
     callback button4-pressed<=>button4.clicked;
-    callback button5-pressed<=>button4.clicked;
+    callback button5-pressed<=>button5.clicked;
+    callback button6-pressed<=>button6.clicked;
+    callback button7-pressed<=>button7.clicked;
+
+
     HorizontalLayout {
         Rectangle {
             width: 200px;
@@ -25,7 +33,6 @@ export component AppWindow inherits Window {
                 }
 
                 button1 := Button {
-                    property <string> name: "Rust Docs";
                     height: 50px;
                     text: "View 1";
                 }
@@ -49,6 +56,17 @@ export component AppWindow inherits Window {
                     height: 50px;
                     text: "Documentation";
                 }
+
+                button6 := Button {
+                    height: 50px;
+                    text: "Source Code";
+                }
+
+                button7 := Button {
+                    text: "Read File";
+                    height: 50px;
+            
+                }
             }
         }
 
@@ -68,22 +86,170 @@ export component AppWindow inherits Window {
 
             if (currentView == 2): 
             VerticalBox {
-                Text {
-                    text: "View 2";
-                    color: #ffffff;
-                }
+                GridLayout {
+                    spacing: 10px;
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
+                    Row {
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    
+                        VerticalBox{
+                            Text {
+                                text: "Name";
+                                color: #ffffff;
+                            }
+    
+                            TextEdit {
+                                text: "John Doe";
+                            }              
+                        }
+                    }
 
-                Button {
-                    text: "Random Button";
-                    height: 50px;
-                }
-
-                Rectangle{
-                    background: #ffffff;
-                TextEdit {
-                    font-size: 14px;
-                    text: "Lorem ipsum dolor sit amet,\n consectetur adipisici elit";
-                }
                 }
             }
 
@@ -94,10 +260,6 @@ export component AppWindow inherits Window {
                     color: #ffffff;
                 }
 
-                Button {
-                    text: "Random Button";
-                    height: 50px;
-                }
             }
         }
     }

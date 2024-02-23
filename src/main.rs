@@ -3,6 +3,7 @@ use webbrowser;
 slint::include_modules!();
 
 fn main() -> Result<(), slint::PlatformError> {
+    use std::fs;
     let ui = AppWindow::new()?;
 
     // This needs to be refactored big time lol
@@ -42,6 +43,15 @@ fn main() -> Result<(), slint::PlatformError> {
 
     ui.on_button5_pressed(move || {
         webbrowser::open("https://swaywm.org/").unwrap();
+    });
+
+    ui.on_button6_pressed(move || {
+        webbrowser::open("https://github.com/Monsieur-Monet/easy-config-wizard").unwrap();
+    });
+
+    ui.on_button7_pressed(move || {
+        let data = fs::read_to_string("/home/timo/.config/sway/config").expect("Unable to read file");
+        println!("{}", data);
     });
 
     ui.run()
