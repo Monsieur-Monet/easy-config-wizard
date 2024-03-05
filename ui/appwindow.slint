@@ -1,16 +1,12 @@
 import { Button, VerticalBox , HorizontalBox , TextEdit, GridBox } from "std-widgets.slint";
 
 
-
-export component ReadValue {
-    
-}
-
 export component AppWindow inherits Window {
     title: "Easy Config Wizard";
     preferred-width: 700px;
     preferred-height: 500px;
     background: #4d4d4d;
+    property <int> current_subpage: 0;
     in-out property <int> currentView: 1;
     callback button1-pressed<=>button1.clicked;
     callback button2-pressed<=>button2.clicked;
@@ -19,9 +15,10 @@ export component AppWindow inherits Window {
     callback button5-pressed<=>button5.clicked;
     callback button6-pressed<=>button6.clicked;
     callback button7-pressed<=>button7.clicked;
-
+    callback button8-pressed<=>button8.clicked;
 
     HorizontalLayout {
+
         Rectangle {
             width: 200px;
             VerticalBox {
@@ -62,15 +59,27 @@ export component AppWindow inherits Window {
                     text: "Source Code";
                 }
 
-                button7 := Button {
-                    text: "Read File";
+                button8 := Button {
                     height: 50px;
-            
+                    text: "Read File";
                 }
             }
         }
 
+        Rectangle{
+            
+        }
+
         Rectangle {
+
+        }
+
+        Rectangle {
+            button7 := Button {
+                text: "Read File";
+                height: 50px;
+        
+            }
             if (currentView == 1): 
             VerticalBox {
                 Text {
@@ -252,7 +261,6 @@ export component AppWindow inherits Window {
 
                 }
             }
-
             if (currentView == 3): 
             VerticalBox {
                 Text {
